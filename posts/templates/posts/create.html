@@ -1,0 +1,13 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+{% load static %}
+    <h3>New Post</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <button type="submit">SUBMIT</button>
+    </form>
+{% endblock content %}
