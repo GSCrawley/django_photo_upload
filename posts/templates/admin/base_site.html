@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('insta_project') }}{% endblock %}
+
+{% block branding %}
+<h1 id="insta_project"><a href="{% url 'admin:index' %}">Insta Administration</a></h1>
+{% endblock %}
+
+<!-- {% block nav-global %}{% endblock %} -->

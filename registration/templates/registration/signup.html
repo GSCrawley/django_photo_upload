@@ -1,0 +1,19 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+    <h3>Sign Up!</h3>
+
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form %}
+          {% for error in field.errors %}
+              <p class="text-danger">{{ error }}</p>
+          {% endfor %}
+          <p>
+              <label for="id_{{ field.name }}">{{ field.label|title }}:</label>
+              <input type="{% if "password" in field.name %}password{% else %}text{% endif %}" name="{{ field.name }}" id="id_{{ field.name }}" required>
+          </p>
+      {% endfor %}
+      <button type="submit">Sign up</button>
+    </form>
+{% endblock %}
