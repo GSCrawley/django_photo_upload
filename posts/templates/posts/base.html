@@ -2,7 +2,12 @@
 <html>
     
     <head>  
-        {% load static %}                        
+        {% load static %}    
+        <style>
+            body {background-color: lightgoldenrodyellow; margin: 80px}
+            h1   {color: blue; padding: 10px}
+            p    {color: red;}
+            </style>                    
     </head>
     <body>
         {% if request.user.is_authenticated %}
@@ -15,14 +20,14 @@
         </h1>
 
 
-        <p align="right">
-            <button class="btn" href="/registration/signup">Sign Up</button>
+        <p align="right"
+            <h3><a style="color: blue" href="/registration/signup">Sign Up</a>
             {% if not request.user.is_authenticated %}
-            <button class="btn" href="/accounts/login">Login</button>
+            <a style="color: blue"  href="/accounts/login">Login</a>
             {% endif %}
             {% if request.user.is_authenticated %} 
-            <button class="btn"  href="/posts/create">New Post</button>
-            <button class="btn" href="/accounts/logout">Logout</button>
+            <a style="color: blue"  href="/posts/create">New Post</a>
+            <a style="color: blue"  href="/accounts/logout">Logout</a></h3>
             {% endif %}
         </p>
         {% block content %}
