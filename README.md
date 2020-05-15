@@ -1,4 +1,4 @@
-![](/Users/gideonscrawley/code/insta/insta.png)
+![image](/Users/gideonscrawley/code/insta/insta.png)
 
 # django_photo_upload
 
