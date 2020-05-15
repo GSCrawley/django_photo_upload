@@ -1,4 +1,4 @@
-![image](/Users/gideonscrawley/Desktop/Screen Shot 2020-05-14 at 11.13.58 PM.png)
+![](/Users/gideonscrawley/code/insta/insta.png)
 
 # django_photo_upload
 
