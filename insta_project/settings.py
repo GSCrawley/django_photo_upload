@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts.apps.PostsConfig',
-    'registration.apps'
+    'registration.apps',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +128,5 @@ os.path.join(BASE_DIR, 'static'),
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+LOGIN_REDIRECT_URL = '/posts/'
+LOGOUT_REDIRECT_URL = '/posts/'

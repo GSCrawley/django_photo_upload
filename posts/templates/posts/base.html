@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <h1>
-        InstaGallery
-    </h1>
-
-    <head>
+    
+    <head>  
         {% load static %}                        
-        <link rel="stylesheet" type="text/css" href="{% static 'posts/css/style.css' %}">   
     </head>
+    <body>
+        {% if request.user.is_authenticated %}
+        <p>
+            Hello, {{ request.user.username }}! Welcome to your
+        </p>
+        {% endif %}
+        <h1>
+            InstaGallery
+        </h1>
+
+
+        <p align="right">
+            <button class="btn" href="/registration/signup">Sign Up</button>
+            {% if not request.user.is_authenticated %}
+            <button class="btn" href="/accounts/login">Login</button>
+            {% endif %}
+            {% if request.user.is_authenticated %} 
+            <button class="btn"  href="/posts/create">New Post</button>
+            <button class="btn" href="/accounts/logout">Logout</button>
+            {% endif %}
+        </p>
+        {% block content %}
+        {% endblock %}
+    </body>
 </html>
-
-{% if request.user.is_authenticated %}
-    <p>
-        Hello, {{ request.user.username }}!
-    </p>
-{% endif %}
-
-<p align="right">
-    <a href="/registration/signup">Sign Up</a>
-    {% if not request.user.is_authenticated %}
-    <a href="/accounts/login">Login</a>
-    {% endif %}
-    {% if request.user.is_authenticated %} 
-    <a href="/posts/create">New Post</a>
-    <a href="/accounts/logout">Logout</a>
-    {% endif %}
-  </p>
-  
-  {% block content %}
-  <p>
-      This is a placeholder block.
-  </p>
-  {% endblock %}

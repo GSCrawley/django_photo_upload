@@ -18,11 +18,14 @@ from django.conf import settings # new
 from django.urls import path, include # new
 from django.conf.urls.static import static # new
 from django.conf.urls import url, include
+from registration import views
+
 
 urlpatterns = [
+    path('', include('posts.urls')),
+    path('posts/', include('posts.urls')),
+    path('registration/', include('registration.urls')),
     path('admin/', admin.site.urls),
-    path('', include('posts.urls')), # new
     path('accounts/', include('django.contrib.auth.urls')),
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     

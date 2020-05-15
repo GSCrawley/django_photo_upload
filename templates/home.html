@@ -1,8 +1,16 @@
-<h1>Django Image Uploading</h1>
+
+{% extends "posts/base.html"  %}
+{% load static %}     
+
+<link rel="stylesheet" type="text/css" href="{% static 'posts/style.css' %}">   
+
+<h1>InstaGallery</h1>
+{% block content %}
 <ul>
+ 
   {% for post in object_list %}
-  {% load static %}
     <h2>{{ post.title }}</h2>
-    <img src="{{ post.cover.url}}" alt="{{ post.title }}">
+    <img src="{{ post.cover.url}}" alt="{{ post.title }}" style="width:400px; height:auto">
   {% endfor %}
 </ul>
+{% endblock %}

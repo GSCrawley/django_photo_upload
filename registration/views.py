@@ -10,33 +10,33 @@ class SignUpView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
-def login(request):
-    if request.user.is_authenticated:
-        return redirect('admin_page')
+# def login(request):
+#     if request.user.is_authenticated:
+#         return redirect('admin_page')
  
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = auth.authenticate(username=username, password=password)
+#     if request.method == 'POST':
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+#         user = auth.authenticate(username=username, password=password)
  
-        if user is not None:
-            # correct username and password login the user
-            auth.login(request, user)
-            return redirect('admin_page')
+#         if user is not None:
+#             # correct username and password login the user
+#             auth.login(request, user)
+#             return redirect('admin_page')
  
-        else:
-            messages.error(request, 'Error wrong username/password')
+#         else:
+#             messages.error(request, 'Error wrong username/password')
  
-    return render(request, '/posts/login.html')
- 
- 
-def logout(request):
-    auth.logout(request)
-    return render(request,'/posts/logout.html')
+#     return render(request, '/posts/login.html')
  
  
-def admin_page(request):
-    if not request.user.is_authenticated:
-        return redirect('login')
+# def logout(request):
+#     auth.logout(request)
+#     return render(request,'/posts/logout.html')
  
-    return render(request, 'posts/admin_page.html')
+ 
+# def admin_page(request):
+#     if not request.user.is_authenticated:
+#         return redirect('login')
+ 
+#     return render(request, 'posts/admin_page.html')
