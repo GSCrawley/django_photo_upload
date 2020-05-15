@@ -1,4 +1,5 @@
-![Alt Text](/Users/gideonscrawley/code/insta/insta.png)
+![](media/images/Insta.jpg)
+
 
 # django_photo_upload
 
