@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ![image](media/images/Insta.jpg)
+=======
+![](media/images/Insta.jpg)
+
+>>>>>>> 41c902704a1dadc74d1237d8d3d58edf110b1024
 
 # django_photo_upload
 
