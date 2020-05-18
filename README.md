@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ![image](media/images/Insta.jpg)
 =======
 ![](media/images/Insta.jpg)
